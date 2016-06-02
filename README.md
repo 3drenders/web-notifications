@@ -15,4 +15,4 @@ An ES6 wrapper library for native web notifications
 ## Credits
 
 * `krasimir` - Webpack library starter
-* https://github.com/krasimir/webpack-library-starter
+https://github.com/krasimir/webpack-library-starter
