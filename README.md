@@ -4,13 +4,13 @@ An ES6 wrapper library for native web notifications
 
 ## What are native web notifications?
 
-If you are not familiar with native web notifications, it's pretty awesome.
-Developers can use them to sent push notifications to users, both when on their site and when push if the user subscribes to the site
+If you are not familiar with native web notifications, it's a way to bring push notifications to the web.
+Developers can use them to sent push notifications to users, both when on their site and even when the user is offline, it the users allows this.
 Check out Google's getting started guide on it! https://developers.google.com/web/fundamentals/getting-started/push-notifications
 
-## Features
+## Usage
 
-* `soooooonnn` -
+* wn.getPermission() - Get permission from the user to send notifications.
 
 ## Development
 
