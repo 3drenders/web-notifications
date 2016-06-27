@@ -1,43 +1,38 @@
 (function (window) {
 
-    'use strict';
-    function define_library() {
-        var wn = {};
+  'use strict';
+  function defineWn() {
+    var wn = {};
 
-        wn.greet = function (name) {
-            alert("Hello from the " + name + " library.");
-        };
+    wn.getPermission = function () {
 
-        wn.checkCompatibility = function () {
+      // Check if the browser supports web notifications
+      if (!('Notification' in window)) {
+        alert('This browser does not support system notifications');
 
-            if (!("Notification" in window)) {
-                alert("This browser does not support system notifications");
-            }
+        // If there is support, check if the permission is already set.
+      } else if (Notification.permission === 'granted') {
+        // Print to log if acces is granted
+        console.log('Web Notifications: Permission Granted');
 
-            // Let's check whether notification permissions have already been granted
-            else if (Notification.permission === "granted") {
-                // If it's okay let's create a notification
-                var notification = new Notification("Hi there!");
-            }
+        // Else, we ask the user for permission
+      } else if (Notification.permission !== 'granted') {
 
-            // Otherwise, we need to ask the user for permission
-            else if (Notification.permission !== 'denied') {
-                Notification.requestPermission(function (permission) {
-                    // If the user accepts, let's create a notification
-                    if (permission === "granted") {
-                        var notification = new Notification("Hi there!");
-                    }
-                });
-            }
-        };
+        Notification.requestPermission(function (permission) {
+        // If the user accepts, log the succes message
+          if (permission === 'granted') {
+            console.log('Web Notifications: Permission Granted');
+          }
+        });
+      }
+    };
 
-        return Library;
-    }
+    return wn;
+  }
 
-    if (typeof(Library) === 'undefined') {
-        window.Library = define_Library();
-    }
-    else {
-        console.log("wn already defined.");
-    }
+  if (typeof wn === 'undefined') {
+    window.wn = defineWn();
+  } else {
+    console.log('wn already defined.');
+  }
 })(window);
