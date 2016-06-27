@@ -4,7 +4,7 @@
   function defineWn() {
     var wn = {};
 
-    wn.getPermission = function () {
+    wn.getPermission = function() {
 
       // Check if the browser supports web notifications
       if (!('Notification' in window)) {
@@ -26,6 +26,16 @@
         });
       }
     };
+
+    wn.send = function(title, message, timeout, icon) {
+      var options = {
+        body: message,
+        icon: icon
+      };
+
+      var notification = new Notification(title, options);
+      setTimeout(notification.close.bind(notification), timeout);
+    }
 
     return wn;
   }
