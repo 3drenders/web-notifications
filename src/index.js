@@ -1,38 +1,59 @@
-(function (window) {
+(function(window) {
 
-  'use strict';
-  function defineWn() {
-    var wn = {};
+    'use strict';
 
-    wn.getPermission = function () {
+    function defineWn() {
+        var wn = {};
 
-      // Check if the browser supports web notifications
-      if (!('Notification' in window)) {
-        alert('This browser does not support system notifications');
 
-        // If there is support, check if the permission is already set.
-      } else if (Notification.permission === 'granted') {
-        // Print to log if acces is granted
-        console.log('Web Notifications: Permission Granted');
+        //@todo JSdocs needed here
+        wn.getPermission = function() {
 
-        // Else, we ask the user for permission
-      } else if (Notification.permission !== 'granted') {
+            // Check if the browser supports web notifications
+            if (!('Notification' in window)) {
+                console.log('Web Notification: This browser does not support system notifications');
 
-        Notification.requestPermission(function (permission) {
-        // If the user accepts, log the succes message
-          if (permission === 'granted') {
-            console.log('Web Notifications: Permission Granted');
-          }
-        });
-      }
-    };
+                // If there is support, check if the permission is already set.
+            } else if (Notification.permission === 'granted') {
+                // Print to log if acces is granted
+                console.log('Web Notifications: Permission already granted');
 
-    return wn;
-  }
+                // Else, we ask the user for permission
+            } else if (Notification.permission !== 'granted') {
 
-  if (typeof wn === 'undefined') {
+                Notification.requestPermission(function(permission) {
+                    // If the user accepts, log the succes message
+                    if (permission === 'granted') {
+                        console.log('Web Notifications: Permission granted');
+                    }
+                });
+            }
+        };
+
+        wn.send = function(title, body, icon) {
+            let options = {
+                body: body,
+                icon: icon
+            }
+            new Notification(title, options);
+        }
+
+
+
+
+
+
+
+        //Return the library
+        return wn;
+
+    }
+
     window.wn = defineWn();
-  } else {
-    console.log('wn already defined.');
-  }
+    // @todo fix this function
+    // if (typeof wn === 'undefined') {
+    //     window.wn = defineWn();
+    // } else {
+    //     console.log('Web Notifications: Already defined.');
+    // }
 })(window);
