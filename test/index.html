@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wns</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="../src/index.js"></script>
+</head>
+<body class="container">
+
+    <h1 class="title">wn - Web Notifications</h1>
+    <section class="buttons row">
+        <span class="twelve columns">
+            <button class="button-primary" onclick="wn.getPermission()">Get permission</button>
+        </span>
+        <span class="twelve columns">
+             <button class="button-primary" onclick="wn.send('Sample Text')">Test notification title</button>
+        </span>
+
+    </section>
+</body>
+</html>

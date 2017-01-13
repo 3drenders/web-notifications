@@ -49,8 +49,6 @@ Temporary Items
 # idea folders
 .idea
 
-# test folder
-test
 
 #node modules
 node_modules
