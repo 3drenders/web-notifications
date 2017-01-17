@@ -11,6 +11,10 @@ Check out Google's getting started guide on it! https://developers.google.com/we
 ## Usage
 
 * wn.getPermission() - Get permission from the user to send notifications.
+```javascript
+    wn.getPermission()
+```
+* wn.send(title, body, icon, clickEvent) - Get permission from the user to send notifications.
 
 ## Development
 
