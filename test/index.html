@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="../src/index.js"></script>
+    <script src="../lib/web-notifications.js"></script>
 </head>
 <body class="container">
 
@@ -17,6 +17,12 @@
         </span>
         <span class="twelve columns">
              <button class="button-primary" onclick="wn.send('Sample Text')">Test notification title</button>
+        </span>
+        <span class="twelve columns">
+            <button class="button-primary" onclick="wn.send('Een keer een kopje koffie drinken?', 'Klik hier om mij te mailen!', 'kevke.jpg', function(){
+                window.location.href = 'mailto:kevingrond@gmail.com?subject=Koffie?';
+                console.log('enne?');
+            })">Test notification full</button>
         </span>
 
     </section>

@@ -2,11 +2,20 @@
 
     'use strict';
 
+    /**
+     * @function defineWn()
+     * @description Wrapper function for defining the library
+     * @return {function} The entire library
+     */
     function defineWn() {
         var wn = {};
 
 
-        //@todo JSdocs needed here
+        /**
+         * @function wn.getPermission
+         * @description Handles permissions for the Notifications API
+         * @returns {void}
+         */
         wn.getPermission = function() {
 
             // Check if the browser supports web notifications
@@ -30,30 +39,30 @@
             }
         };
 
-        wn.send = function(title, body, icon) {
+        /**
+         * @function wn.send
+         * @description Sends new notifications
+         * @param {string} title Title of the message
+         * @param {string} body Body of the message
+         * @param {string} icon URL of the icon for the message
+         * @param {function} clickEvent Onclick function for the notification
+         */
+        wn.send = function(title, body, icon, clickEvent) {
             let options = {
                 body: body,
                 icon: icon
+            };
+            let notif = new Notification(title, options);
+            notif.onclick = function () {
+                clickEvent();
             }
-            new Notification(title, options);
-        }
-
-
-
-
-
+        };
 
 
         //Return the library
         return wn;
-
     }
 
     window.wn = defineWn();
-    // @todo fix this function
-    // if (typeof wn === 'undefined') {
-    //     window.wn = defineWn();
-    // } else {
-    //     console.log('Web Notifications: Already defined.');
-    // }
+
 })(window);

@@ -49,6 +49,8 @@ Temporary Items
 # idea folders
 .idea
 
+# test enviroment
+test
 
 #node modules
 node_modules
