@@ -14,7 +14,8 @@ Check out Google's getting started guide on it! https://developers.google.com/we
 ```javascript
     wn.getPermission();
 ```
-* wn.send(title, body, icon, clickEvent) - Sends a notification to the user
+* wn.send(title, body, icon, clickEvent) - Sends a notification to the user.
+
 Takes four parameters:
     * Title - The title of the notification
     * Body - The body of the message for the notification
