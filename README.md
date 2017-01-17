@@ -12,15 +12,19 @@ Check out Google's getting started guide on it! https://developers.google.com/we
 
 * wn.getPermission() - Get permission from the user to send notifications.
 ```javascript
-    wn.getPermission()
+    wn.getPermission();
 ```
-* wn.send(title, body, icon, clickEvent) - Get permission from the user to send notifications.
-
-## Development
-
-* `npm run build` - builds the library to the lib folder
-* `npm run dev` - builds the library and adds a watcher
-
+* wn.send(title, body, icon, clickEvent) - Sends a notification to the user
+Takes four parameters:
+    * Title - The title of the notification
+    * Body - The body of the message for the notification
+    * Icon - URL to a image shown in the notification. Recommended size for icon is 640px by 640px
+    * clickEvent - A callback function that fires when the user clicks on the notification
+```javascript
+    wn.send('Cool Title', 'Not as cool as this message', 'coolesticon.png', function(){
+        console.log('You clicked the notification!');
+    });
+```
 
 ## Credits
 
