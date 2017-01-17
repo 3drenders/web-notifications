@@ -11,18 +11,18 @@
 <body class="container">
 
     <h1 class="title">wn - Web Notifications</h1>
+    <p>Use the buttons below to check out the functionality of the library</p>
     <section class="buttons row">
         <span class="twelve columns">
-            <button class="button-primary" onclick="wn.getPermission()">Get permission</button>
+            <button class="button-primary" onclick="wn.getPermission()">Get permission for notifications</button>
         </span>
         <span class="twelve columns">
-             <button class="button-primary" onclick="wn.send('Sample Text')">Test notification title</button>
+             <button class="button-primary" onclick="wn.send('Sample Text')">Test notification with text</button>
         </span>
         <span class="twelve columns">
-            <button class="button-primary" onclick="wn.send('Een keer een kopje koffie drinken?', 'Klik hier om mij te mailen!', 'kevke.jpg', function(){
-                window.location.href = 'mailto:kevingrond@gmail.com?subject=Koffie?';
-                console.log('enne?');
-            })">Test notification full</button>
+            <button class="button-primary" onclick="wn.send('Harambe', 'Rest in Peace', 'test-image.jpg', function(){
+                window.location.href = 'mailto:test@gmail.com?subject=RIPHarambe';
+            })">Test notification with image</button>
         </span>
 
     </section>
