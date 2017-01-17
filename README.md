@@ -15,8 +15,6 @@ Check out Google's getting started guide on it! https://developers.google.com/we
     wn.getPermission();
 ```
 * wn.send(title, body, icon, clickEvent) - Sends a notification to the user.
-
-Takes four parameters:
     * Title - The title of the notification
     * Body - The body of the message for the notification
     * Icon - URL to a image shown in the notification. Recommended size for icon is 640px by 640px
